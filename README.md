@@ -125,3 +125,43 @@ Coberturas:
 - H3K27me3: 99.303%
 
 La integración fue realizada mediante `region_id` con corrección de coordenadas 1-based → 0-based y merges many-to-one.
+
+# Phase 1 — CLOSED
+
+Phase 1 is formally completed.
+
+### Final achievements
+
+- Final multi-modal sgRNA feature matrix integrating:
+  - F1: sequence features
+  - F2: ATAC-seq chromatin accessibility
+  - F3: histone-mark features
+  - F5: genomic/TSS context
+- Random Forest feature ablation completed.
+- Final XGBoost multi-modal model evaluated with 5-fold GroupKFold.
+- Internal benchmarking completed across position-only, sequence-only and multi-modal feature levels.
+- SHAP analysis and TreeSHAP numerical validation completed.
+
+### Best Phase 1 result
+
+**XGBoost — F1+F2+F3+F5**
+
+**Spearman ρ ≈ 0.322**
+
+Final model performance:
+- Spearman ρ: 0.32153
+- R²: 0.10042
+- RMSE: 0.41162
+
+### Phase 2 backlog
+
+The following remain deferred to Phase 2:
+
+- F4 — Hi-C integration.
+- Expansion and harmonization of additional efficacy datasets.
+- External validation on an independent compatible efficacy dataset.
+- Additional guide-scoring features/resources.
+
+For the complete closure record, see:
+
+`logs/phase1_final_summary.md`
