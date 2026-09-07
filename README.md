@@ -141,8 +141,9 @@ Phase 1 is formally completed.
 - Final XGBoost multi-modal model evaluated with 5-fold GroupKFold.
 - Internal benchmarking completed across position-only, sequence-only and multi-modal feature levels.
 - SHAP analysis and TreeSHAP numerical validation completed.
+- External benchmarking against RuleSet3 completed on a matched Horlbeck2016 subset.
 
-### Best Phase 1 result
+### Best Phase 1 internal result
 
 **XGBoost — F1+F2+F3+F5**
 
@@ -152,6 +153,24 @@ Final model performance:
 - Spearman ρ: 0.32153
 - R²: 0.10042
 - RMSE: 0.41162
+
+### External benchmarking — RuleSet3
+
+Matched benchmark: **N = 5,049 Horlbeck2016 CRISPRi guides** with exact hg38 sequence-context matching.
+
+| Model | Spearman ρ |
+|---|---:|
+| XGBoost F1+F2+F3+F5 | 0.26731 |
+| RuleSet3 | 0.27176 |
+
+Difference:
+- Δρ = +0.00445 (RuleSet3 − XGBoost)
+- Paired bootstrap 95% CI: [-0.03055, 0.03891]
+- p = 0.8128
+
+The difference is not statistically significant. RuleSet3 and the internal multi-modal model therefore show comparable rank-order performance on this matched external benchmark subset.
+
+The multi-modal model nevertheless remains clearly superior to the evaluated internal position-only and sequence-only baselines, reaching ρ ≈ 0.322 on the complete Phase 1 benchmark.
 
 ### Phase 2 backlog
 

@@ -226,6 +226,32 @@ Detailed investigation:
 
 ---
 
+## 10. External Benchmarking
+
+An external sequence-only benchmark was performed against RuleSet3 using the canonical 20-nt Horlbeck2016 CRISPRi guides.
+
+The benchmark used the same matched guides for both predictors. Of the 5,072 canonical Horlbeck2016 guides, 5,049 had an exact guide-sequence match in the hg38 reference context and were retained for the final 1:1 comparison.
+
+### RuleSet3 vs multi-modal XGBoost
+
+| Model | N | Spearman ρ |
+|---|---:|---:|
+| XGBoost F1+F2+F3+F5 | 5,049 | 0.26731 |
+| RuleSet3 | 5,049 | 0.27176 |
+
+Observed difference:
+
+- Δρ (RuleSet3 − XGBoost) = **+0.00445**
+- Paired bootstrap: **10,000 replicates**, seed 42
+- 95% CI: **[-0.03055, 0.03891]**
+- p = **0.8128**
+
+The observed difference is small and not statistically significant. The confidence interval includes zero, providing no evidence that either RuleSet3 or the internal multi-modal XGBoost model has superior rank-order performance on this matched subset.
+
+Importantly, this external result does not invalidate the multi-modal Phase 1 model. On the internal benchmark, XGBoost F1+F2+F3+F5 achieved **ρ ≈ 0.322**, clearly outperforming the evaluated position-only and sequence-only internal baselines. The RuleSet3 comparison therefore indicates comparable performance on the subset covered by the external sequence-only scorer rather than a significant advantage for RuleSet3.
+
+R² and RMSE were not used as the primary external comparison because RuleSet3 predictions are on a different score scale and are not calibrated to the Horlbeck2016 CRISPRi activity-score scale.
+
 ## 9. Limitations
 
 The following limitations are recognized at the end of Phase 1:
@@ -234,13 +260,13 @@ The following limitations are recognized at the end of Phase 1:
 2. Additional datasets investigated during Phase 1 did not provide directly equivalent quantitative efficacy measurements suitable for straightforward target integration.
 3. F4 Hi-C features were not incorporated into the final model.
 4. The best observed Spearman correlation (~0.322) indicates meaningful but limited predictive performance; the model does not provide highly accurate individual sgRNA efficacy prediction.
-5. Internal benchmarking does not constitute external validation on an independent efficacy dataset.
+5. The RuleSet3 benchmark provides external sequence-model comparison, but it is limited to the 5,049 Horlbeck2016 guides with exact hg38 sequence-context matching and does not constitute validation on an independent quantitative efficacy dataset.
 6. The SHAP results describe feature contributions to the trained model and should not be interpreted as direct evidence of biological causality.
 7. The feature space remains limited to the modalities implemented in Phase 1.
 
 ---
 
-## 10. Phase 2 backlog
+## 11. Phase 2 backlog
 
 The following items are explicitly deferred to Phase 2:
 
@@ -266,7 +292,7 @@ Sanson and other datasets may be revisited once a defensible harmonization strat
 
 ---
 
-## 11. Final Phase 1 conclusion
+## 12. Final Phase 1 conclusion
 
 Phase 1 successfully established a reproducible multi-modal sgRNA efficacy prediction framework and completed the planned internal evaluation, including:
 
