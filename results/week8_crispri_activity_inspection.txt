@@ -1,0 +1,15 @@
+ChromaCRISPR Phase 1 — Week 8 CRISPRi activity inspection
+================================================================================
+Activity file: data/raw/crispr_datasets/Horlbeck2016/elife-19760-supp1-v2.xlsx
+Activity sheet: CRISPRi
+Activity rows: 18380
+Unique activity sequences: 18318
+Matrix unique sequences: 150311
+Sequence overlap: 18318
+Sequence+gene overlap: 18380
+Score column: CRISPRi activity score [Horlbeck et al., eLife 2016]
+Score min: -0.832386701822
+Score max: 2.73859526503
+Score mean: 0.417475829109243
+Score median: 0.2771251783955
+Score assessment: El score no está acotado entre 0 y 1; parece ser un score raw/no normalizado a [0,1]. La confirmación definitiva requiere la documentación del dataset original.

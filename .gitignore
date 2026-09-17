@@ -1,38 +1,101 @@
-# Environments
-chromacrispr-phase1/
-*.log
+# datos crudos / pesados de terceros
+data/raw/
+**/*.bigWig
+**/*.bw
+**/*.hic
+**/*.cool
+**/*.mcool
+**/*.bam
+**/*.fastq*
+**/*.h5ad
+**/*.h5
+**/*.parquet
 
-# Python
+# entornos / cache
+.conda/
+envs/
 __pycache__/
 *.pyc
-*.pyo
-
-# Jupyter
 .ipynb_checkpoints/
+.DS_Store
+*.egg-info/
 
-# Data (large files)
+# secretos / locales
+.env
+*.local
+.vscode/
+.idea/
+
+# intermedios voluminosos
+data/interim/**/*.gz
+data/interim/**/*.tab
+data/interim/F2_atac/
+data/interim/F4_hic/
+**/atac_pm*.tab
+**/atac_pm*.gz
+
+# modelos pesados opcionales (descomentar si no querés joblib)
+# models/*.joblib
+# models/*.pkl
+
+# third-party / local envs (nunca publicar)
+benchmarks/**/venv/
+**/venv/
+**/.venv/
+
+# raw y tracks pesados
 data/raw/
+data/reference/hg38/fasta/
+data/processed/hic_k562/
+**/*.bigWig
+**/*.bw
+**/*.hic
+**/*.cool
+**/*.mcool
+**/*.bt2
+
+# intermedios voluminosos
 data/interim/
+*.tab.gz
 
-# OS
-.DS_Store
+# basura / scratch
+failed_sanson.tsv
+test_closest.tsv
+resolución
+ventana
+**/tmp_pack_*
 
-# Snakemake
-.snakemake/
+# benchmarks externos + venv local
+benchmarks/
 
-# Large bioinformatics datasets
-data/raw/
-data/processed/
+# referencias genómicas pesadas / third-party
+data/reference/hg38/gencode.v49.annotation.gtf
+data/reference/Homo_sapiens.GRCh37.87.gtf
+data/reference/hg38/fasta/
 
-# Python cache
-__pycache__/
-*.pyc
+# intermedios y archivos de trabajo en logs/
+logs/sanson_*.tsv
+logs/sanson_*.sam
+logs/sanson_*.fasta
+logs/sanson_*.txt
+logs/fantom5_*.tsv
+logs/window2kb_*.tsv
+logs/failed_sanson.tsv
+logs/week8_eda_plots/
+logs/weekP_plots/
+logs/results_sanson_test1000.txt
+logs/chromacrispr_phase1_env_before_shap.txt
+logs/phase1_week5_sgrna_reference.log
 
-# Temporary files
-*.log
-.DS_Store
+# matrices intermedias (no las de training final)
+data/processed/sgRNA_*.csv
+data/processed/temporal/
+data/processed/hic_k562/
+data/archive/
+data/processed/*_reference_FINAL.csv
+data/processed/sanson2018_*.csv
 
-# Literature
-Papers/
-Anexos/
-
+# manuscrito / papers locales (opcional: quitá si querés versionarlos)
+# manuscript/
+# papers/
+# Anexos/

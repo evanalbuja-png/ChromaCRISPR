@@ -1,0 +1,9 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+The derived data files under data/processed/ (feature matrices and harmonized
+labels produced by the authors) are licensed under CC BY 4.0.
+
+https://creativecommons.org/licenses/by/4.0/
+
+Third-party source data (ENCODE, published CRISPR screens, Hi-C) remain under
+their original terms and are not redistributed in this repository.

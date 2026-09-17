@@ -61,19 +61,16 @@ def sequence_features(df):
         .apply(gc_content)
     )
 
-
     df["guide_length_calc"] = (
         df["guide_sequence"]
         .str.len()
     )
-
 
     df["pam_GG"] = (
         df["guide_sequence"]
         .str.endswith("GG")
         .astype(int)
     )
-
 
     df["pam_GC"] = (
         df["guide_sequence"]
@@ -82,6 +79,23 @@ def sequence_features(df):
         .astype(int)
     )
 
+    # NUEVAS FEATURES TSS
+
+    df["tss_offset"] = df["offset"]
+
+    df["crispri_region"] = (
+        df["crispri_region"]
+        .astype(int)
+    )
+
+    df["tss_source_encoded"] = (
+        df["coordinate_source"]
+        .map({
+            "GENCODE":0,
+            "FANTOM5":1,
+            "unresolved_TSS_review":2
+        })
+    )
 
     return df
 
@@ -219,6 +233,20 @@ def main():
             data=df.guide_length.values
         )
 
+        h5.create_dataset(
+            "tss_offset",
+            data=df.tss_offset.values
+        )
+
+        h5.create_dataset(
+            "crispri_region",
+            data=df.crispri_region.values
+        )
+
+        h5.create_dataset(
+            "tss_source_encoded",
+            data=df.tss_source_encoded.values
+        )
 
         h5.create_dataset(
             "hg38_guides",

@@ -1,0 +1,6 @@
+feature	file	regions_or_guides	coverage
+ATAC_F2	data/interim/features/f2_atac_features.csv	139731	99.69%
+H3K27ac_F3	data/interim/features/f3_h3k27ac_features.csv	140152	99.991%
+H3K4me3_F3	data/interim/features/f3_h3k4me3_features.csv	136211	97.180%
+H3K27me3_F3	data/interim/features/f3_h3k27me3_features.csv	139150	99.277%
+FINAL_DATASET	data/interim/features/sgRNA_with_f2_f3_repressive.csv	155454	-

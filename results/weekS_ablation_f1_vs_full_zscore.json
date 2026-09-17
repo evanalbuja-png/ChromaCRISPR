@@ -1,0 +1,12 @@
+{
+  "target": "z_score_within_study",
+  "F1_n_features": 35,
+  "F1_loco_mean": 0.3705653750928764,
+  "F1_loco_sd": 0.040829354522679266,
+  "F1_loco_median": 0.36337876129172847,
+  "FULL_n_features": 101,
+  "FULL_loco_mean": 0.4288318019632385,
+  "FULL_loco_sd": 0.043622749048976436,
+  "FULL_loco_median": 0.4124244185815947,
+  "delta_full_minus_f1": 0.0582664268703621
+}

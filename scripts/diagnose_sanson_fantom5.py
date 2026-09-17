@@ -127,6 +127,11 @@ for _, row in unresolved.iterrows():
 
             guide_pos = start + pos_fwd
 
+            if peak["strand"] == "+":
+                offset = guide_pos - fantom_tss
+            else:
+                offset = fantom_tss - guide_pos
+
             resolved.append({
 
                 "gene_symbol": gene,
@@ -134,7 +139,7 @@ for _, row in unresolved.iterrows():
                 "strand_found": "+",
                 "guide_position": guide_pos,
                 "fantom_tss": fantom_tss,
-                "offset": guide_pos - fantom_tss,
+                "offset": offset,
                 "peak_score": peak["score"]
 
             })
@@ -147,6 +152,11 @@ for _, row in unresolved.iterrows():
 
             guide_pos = start + pos_rev
 
+            if peak["strand"] == "+":
+                offset = guide_pos - fantom_tss
+            else:
+                offset = fantom_tss - guide_pos
+
             resolved.append({
 
                 "gene_symbol": gene,
@@ -154,7 +164,7 @@ for _, row in unresolved.iterrows():
                 "strand_found": "-",
                 "guide_position": guide_pos,
                 "fantom_tss": fantom_tss,
-                "offset": guide_pos - fantom_tss,
+                "offset": offset,
                 "peak_score": peak["score"]
 
             })

@@ -18,7 +18,7 @@ import sys
 
 
 PROJECT_ROOT = Path(
-    "/mnt/d/Documentos/Proyectos/ChromaCRISPR"
+    str(Path(__file__).resolve().parents[1])
 )
 
 INPUT_HIC = (

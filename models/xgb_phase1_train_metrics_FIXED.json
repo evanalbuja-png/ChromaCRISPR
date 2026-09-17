@@ -1,0 +1,52 @@
+{
+  "n_samples": 18244,
+  "oof_spearman": 0.2973841336436636,
+  "oof_r2": 0.08220508849195718,
+  "oof_rmse": 0.4158534817049864,
+  "fold_metrics": [
+    {
+      "fold": 1,
+      "spearman": 0.27916486729270584,
+      "r2": 0.06907177162897371,
+      "rmse": 0.41961445175962847
+    },
+    {
+      "fold": 2,
+      "spearman": 0.29516628530495037,
+      "r2": 0.08675921315181667,
+      "rmse": 0.4120656719480396
+    },
+    {
+      "fold": 3,
+      "spearman": 0.2672185333601047,
+      "r2": 0.06342243560951932,
+      "rmse": 0.4181920063292426
+    },
+    {
+      "fold": 4,
+      "spearman": 0.300976797879513,
+      "r2": 0.07469585639158338,
+      "rmse": 0.4190030991594876
+    },
+    {
+      "fold": 5,
+      "spearman": 0.3446481833527399,
+      "r2": 0.11219607877041926,
+      "rmse": 0.4101139374112619
+    }
+  ],
+  "xgb_params": {
+    "n_estimators": 400,
+    "max_depth": 5,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "min_child_weight": 5,
+    "reg_alpha": 0.1,
+    "reg_lambda": 1.0,
+    "objective": "reg:squarederror",
+    "n_jobs": -1,
+    "random_state": 42,
+    "tree_method": "hist"
+  }
+}

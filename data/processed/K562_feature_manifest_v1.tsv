@@ -1,0 +1,121 @@
+column	group	accepted_for_modeling	notes
+guide_sequence	metadata	False	id/debug
+chromosome	metadata	False	id/debug
+coordinate	metadata	False	id/debug
+gene_target	metadata	False	id/debug
+dataset_origin	metadata	False	id/debug
+raw_score	label	False	target; use EEP_percentile as primary
+z_score_within_study	label	False	target; use EEP_percentile as primary
+EEP_percentile	label	True	PRIMARY TARGET
+gc_content	F1	True	guide_3prime is proxy not real PAM context; real PAM is pam_* from F5/J
+mfe_rnafold	F1	True	guide_3prime is proxy not real PAM context; real PAM is pam_* from F5/J
+g_run_max	F1	True	guide_3prime is proxy not real PAM context; real PAM is pam_* from F5/J
+poly_t_count	F1	True	guide_3prime is proxy not real PAM context; real PAM is pam_* from F5/J
+tm_santalucia	F1	True	guide_3prime is proxy not real PAM context; real PAM is pam_* from F5/J
+seed_pwm_score	F1	True	guide_3prime is proxy not real PAM context; real PAM is pam_* from F5/J
+guide_length	F1_extra	True	extra not in official 24
+guide_3prime_pos1_A	F1	True	guide_3prime is proxy not real PAM context; real PAM is pam_* from F5/J
+guide_3prime_pos1_C	F1	True	guide_3prime is proxy not real PAM context; real PAM is pam_* from F5/J
+guide_3prime_pos1_G	F1	True	guide_3prime is proxy not real PAM context; real PAM is pam_* from F5/J
+guide_3prime_pos1_T	F1	True	guide_3prime is proxy not real PAM context; real PAM is pam_* from F5/J
+guide_3prime_pos2_A	F1	True	guide_3prime is proxy not real PAM context; real PAM is pam_* from F5/J
+guide_3prime_pos2_C	F1	True	guide_3prime is proxy not real PAM context; real PAM is pam_* from F5/J
+guide_3prime_pos2_G	F1	True	guide_3prime is proxy not real PAM context; real PAM is pam_* from F5/J
+guide_3prime_pos2_T	F1	True	guide_3prime is proxy not real PAM context; real PAM is pam_* from F5/J
+guide_3prime_pos3_A	F1	True	guide_3prime is proxy not real PAM context; real PAM is pam_* from F5/J
+guide_3prime_pos3_C	F1	True	guide_3prime is proxy not real PAM context; real PAM is pam_* from F5/J
+guide_3prime_pos3_G	F1	True	guide_3prime is proxy not real PAM context; real PAM is pam_* from F5/J
+guide_3prime_pos3_T	F1	True	guide_3prime is proxy not real PAM context; real PAM is pam_* from F5/J
+guide_3prime_pos4_A	F1	True	guide_3prime is proxy not real PAM context; real PAM is pam_* from F5/J
+guide_3prime_pos4_C	F1	True	guide_3prime is proxy not real PAM context; real PAM is pam_* from F5/J
+guide_3prime_pos4_G	F1	True	guide_3prime is proxy not real PAM context; real PAM is pam_* from F5/J
+guide_3prime_pos4_T	F1	True	guide_3prime is proxy not real PAM context; real PAM is pam_* from F5/J
+ATAC_pm100_mean	F2	True	
+ATAC_pm100_max	F2	True	
+ATAC_pm100_p90	F2	True	
+ATAC_pm200_mean	F2	True	
+ATAC_pm200_max	F2	True	
+ATAC_pm200_p90	F2	True	
+ATAC_pm500_mean	F2	True	
+ATAC_pm500_max	F2	True	
+ATAC_pm500_p90	F2	True	
+ATAC_pm1000_mean	F2	True	
+ATAC_pm1000_max	F2	True	
+ATAC_pm1000_p90	F2	True	
+ATAC_pm2000_mean	F2	True	
+ATAC_pm2000_max	F2	True	
+ATAC_pm2000_p90	F2	True	
+ATAC_pm5000_mean	F2	True	
+ATAC_pm5000_max	F2	True	
+ATAC_pm5000_p90	F2	True	
+dnase_200bp_mean	F2_extra	True	Semana G extra
+atac_peak_summit_overlap	F2_extra	True	Semana G extra; binary summit±50
+distance_to_nearest_atac_peak	F2_extra	True	Semana G extra; peak distance
+chromhmm_state	metadata	False	id/debug
+H3K27ac_pm500_mean	F3	True	
+H3K27ac_pm1000_mean	F3	True	
+H3K27ac_pm2000_mean	F3	True	
+H3K4me3_pm500_mean	F3	True	
+H3K4me3_pm1000_mean	F3	True	
+H3K4me3_pm2000_mean	F3	True	
+H3K27me3_pm500_mean	F3	True	
+H3K27me3_pm1000_mean	F3	True	
+H3K27me3_pm2000_mean	F3	True	
+H3K9me3_pm500_mean	F3	True	
+H3K9me3_pm1000_mean	F3	True	
+H3K9me3_pm2000_mean	F3	True	
+H3K4me1_pm500_mean	F3	True	
+H3K4me1_pm1000_mean	F3	True	
+H3K4me1_pm2000_mean	F3	True	
+CTCF_pm1000_mean	F3	True	
+chromhmm_Quies	F3	True	
+chromhmm_TxWk	F3	True	
+chromhmm_Enh1	F3	True	
+chromhmm_TssFlnkU	F3	True	
+chromhmm_Tss	F3	True	
+chromhmm_TssFlnk	F3	True	
+chromhmm_ReprPC	F3	True	
+chromhmm_Biv	F3	True	
+chromhmm_Tx	F3	True	
+chromhmm_TssFlnkD	F3	True	
+chromhmm_Het	F3	True	
+chromhmm_Enh2	F3	True	
+chromhmm_EnhG2	F3	True	
+chromhmm_ZNF/Rpts	F3	True	
+chromhmm_EnhG1	F3	True	
+H3K4me3_missing	missingness_flag	True	Sec 7.3
+H3K27me3_missing	missingness_flag	True	Sec 7.3
+tss_chrom	metadata	False	id/debug
+tss_coord	metadata	False	id/debug
+genomic_dist	metadata	False	aux distance guide–TSS
+hic_contact_raw	F4	False	raw contact; use hic_contact_log for modeling
+hic_contact_log	F4	True	accepted
+hic_within_5kb_tss	F4	True	accepted
+E1	F4_flagged	False	compartment failed ATAC sanity; exploratory only
+compartment_AB	F4_flagged	False	failed ATAC sanity; exploratory only
+compartment_A	F4_flagged	False	compartment failed ATAC sanity; exploratory only
+strand	metadata	False	id/debug
+log_dist_target_tss	F5	True	
+log_dist_nearest_expressed_tss	F5	True	
+ccre_PLS	F5	True	
+ccre_pELS	F5	True	
+ccre_dELS	F5	True	
+ccre_CA_CTCF	F5	True	
+phylop100_mean_pm100	F5	True	
+log_dist_target_tss_missing	missingness_flag	True	Sec 7.3
+phylop100_missing	missingness_flag	True	Sec 7.3
+pam_3nt	F1_PAM	False	metadata sequence
+pam_match_type	F1_PAM	False	id/debug
+pam_is_NGG	F1_PAM	True	validated NGG one-hot / indicator; NaN if no genomic match
+pam_pos1_A	F1_PAM	True	validated NGG one-hot / indicator; NaN if no genomic match
+pam_pos1_C	F1_PAM	True	validated NGG one-hot / indicator; NaN if no genomic match
+pam_pos1_G	F1_PAM	True	validated NGG one-hot / indicator; NaN if no genomic match
+pam_pos1_T	F1_PAM	True	validated NGG one-hot / indicator; NaN if no genomic match
+pam_pos2_A	F1_PAM	True	validated NGG one-hot / indicator; NaN if no genomic match
+pam_pos2_C	F1_PAM	True	validated NGG one-hot / indicator; NaN if no genomic match
+pam_pos2_G	F1_PAM	True	validated NGG one-hot / indicator; NaN if no genomic match
+pam_pos2_T	F1_PAM	True	validated NGG one-hot / indicator; NaN if no genomic match
+pam_pos3_A	F1_PAM	True	validated NGG one-hot / indicator; NaN if no genomic match
+pam_pos3_C	F1_PAM	True	validated NGG one-hot / indicator; NaN if no genomic match
+pam_pos3_G	F1_PAM	True	validated NGG one-hot / indicator; NaN if no genomic match
+pam_pos3_T	F1_PAM	True	validated NGG one-hot / indicator; NaN if no genomic match

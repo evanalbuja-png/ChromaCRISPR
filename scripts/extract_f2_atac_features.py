@@ -108,7 +108,7 @@ def associate_with_bed(atac_df, bed):
 
     print("\nAssociating ATAC features with BED using region_id...")
 
-    # Crear identificadores únicos chr:start-end
+    # Crear identificadores únicos
     atac_df["region_id"] = (
         atac_df["chromosome"].astype(str)
         + ":"
@@ -125,33 +125,67 @@ def associate_with_bed(atac_df, bed):
         + bed["end"].astype(str)
     )
 
-    print(
-        "ATAC regions:",
-        len(atac_df)
+    print("\nChecking duplicated region_id...")
+
+    atac_duplicates = (
+        atac_df["region_id"].duplicated().sum()
+    )
+
+    bed_duplicates = (
+        bed["region_id"].duplicated().sum()
     )
 
     print(
-        "BED regions:",
-        len(bed)
+        f"ATAC duplicated region_id: {atac_duplicates}"
     )
 
+    print(
+        f"BED duplicated region_id: {bed_duplicates}"
+    )
+
+    # Mantener primera ocurrencia
+    atac_df = (
+        atac_df
+        .drop_duplicates(
+            subset="region_id",
+            keep="first"
+        )
+    )
+
+    bed = (
+        bed
+        .drop_duplicates(
+            subset="region_id",
+            keep="first"
+        )
+    )
+
+    print("\nAfter deduplication:")
+    print(
+        f"ATAC unique regions: {len(atac_df)}"
+    )
+    print(
+        f"BED unique regions: {len(bed)}"
+    )
+
+    # Inner join 1:1
     merged = bed.merge(
         atac_df,
         on="region_id",
         how="inner",
+        validate="one_to_one",
         suffixes=("_bed", "_atac")
     )
 
+    print("\nFinal association:")
     print(
-        "Matched regions:",
-        len(merged)
+        f"Matched regions: {len(merged)}"
     )
 
-    missing = len(bed) - len(merged)
+    discarded_bed = len(bed) - len(merged)
 
     print(
-        "BED regions discarded:",
-        missing
+        f"BED regions discarded: {discarded_bed}"
     )
 
     print(

@@ -1,0 +1,78 @@
+{
+  "n_samples": 17763,
+  "n_features": 23,
+  "features": [
+    "gc_content",
+    "mfe_rnafold",
+    "guide_length",
+    "g_run_max",
+    "poly_t_count",
+    "ATAC_mean",
+    "ATAC_max",
+    "ATAC_p90",
+    "ATAC_sum",
+    "H3K27ac_mean",
+    "H3K27ac_max",
+    "H3K27ac_p90",
+    "H3K27ac_sum",
+    "H3K4me3_mean",
+    "H3K4me3_max",
+    "H3K4me3_p90",
+    "H3K4me3_sum",
+    "H3K27me3_mean",
+    "H3K27me3_max",
+    "H3K27me3_p90",
+    "H3K27me3_sum",
+    "nearest_tss_distance",
+    "within_promoter_2kb"
+  ],
+  "oof_spearman": 0.3032436889714414,
+  "oof_r2": 0.08474961216181098,
+  "oof_rmse": 0.4160088608093357,
+  "fold_metrics": [
+    {
+      "fold": 1,
+      "spearman": 0.29896028638185523,
+      "r2": 0.07587388306817933,
+      "rmse": 0.42346171361373164
+    },
+    {
+      "fold": 2,
+      "spearman": 0.3026378685645072,
+      "r2": 0.09283511768450359,
+      "rmse": 0.409064275662763
+    },
+    {
+      "fold": 3,
+      "spearman": 0.2699086777411709,
+      "r2": 0.05883294525399996,
+      "rmse": 0.4268616584424624
+    },
+    {
+      "fold": 4,
+      "spearman": 0.32486902236131826,
+      "r2": 0.09860587215409289,
+      "rmse": 0.41052058601422314
+    },
+    {
+      "fold": 5,
+      "spearman": 0.3211142153962391,
+      "r2": 0.09933470271244971,
+      "rmse": 0.4095159630648638
+    }
+  ],
+  "xgb_params": {
+    "n_estimators": 400,
+    "max_depth": 5,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "min_child_weight": 5,
+    "reg_alpha": 0.1,
+    "reg_lambda": 1.0,
+    "objective": "reg:squarederror",
+    "n_jobs": -1,
+    "random_state": 42,
+    "tree_method": "hist"
+  }
+}

@@ -49,7 +49,8 @@ def main():
 
 
     # Test subset
-    sgrna = sgrna.head(args.n)
+    if args.n > 0:
+        sgrna = sgrna.head(args.n)
 
 
     # Load TSS
@@ -216,6 +217,18 @@ def main():
             .head(10)
             .to_string(index=False)
         )
+
+        if results:
+            mapped_df = pd.DataFrame(results)
+
+            mapped_df.to_csv(
+                "logs/sanson_window_mapped.tsv",
+                sep="\t",
+                index=False
+            )
+
+            print("\nReporte de mapeados escrito:")
+            print("logs/sanson_window_mapped.tsv")
 
     if args.report:
         failed_df = pd.DataFrame(failed_records)

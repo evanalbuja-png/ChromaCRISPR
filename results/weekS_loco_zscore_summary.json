@@ -1,0 +1,23 @@
+{
+  "target": "z_score_harmonized_continuous (=z_score_within_study)",
+  "n_features": 101,
+  "params": {
+    "max_depth": 4,
+    "learning_rate": 0.02972886488008395,
+    "n_estimators": 289,
+    "min_child_weight": 4,
+    "subsample": 0.7663021691191627,
+    "colsample_bytree": 0.5668763022299779,
+    "reg_lambda": 0.31785318816701275,
+    "objective": "reg:squarederror",
+    "n_jobs": -1,
+    "random_state": 42,
+    "tree_method": "hist"
+  },
+  "loco_mean": 0.4288318019632385,
+  "loco_sd": 0.043622749048976436,
+  "loco_median": 0.4124244185815947,
+  "n_folds": 23,
+  "ref_eep_xgb_mean": 0.377,
+  "ref_eep_xgb_sd": 0.0385
+}
