@@ -1,4 +1,4 @@
-# ChromaCRISPR Phase 1
+# ChromaCRISPR
 
 ## Estado del proyecto
 Semana 1 - Configuración de infraestructura computacional
