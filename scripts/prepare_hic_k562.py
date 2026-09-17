@@ -17,9 +17,7 @@ import subprocess
 import sys
 
 
-PROJECT_ROOT = Path(
-    str(Path(__file__).resolve().parents[1])
-)
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 INPUT_HIC = (
     PROJECT_ROOT /
